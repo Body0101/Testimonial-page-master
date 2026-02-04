@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --white : #FFFFFF;
+    --whiteyellow : #FAFAF9;
+    --gray25 : #D4D4D8;
+    --p-color : #52525A;
+    --blackblue : #18181B;
+    --green : #4CA154;
+    --orange : #F5C044;
+}
+/* Box-shadow */
+body{
+    height: 100vh;
+    background-color: var(--whiteyellow);
+}
+
+.section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.section > .container{
+    padding: 0 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+    column-gap: 40px;
+}
+
+.section .container .col .star{
+    font-family: 'Sora', sans-serif;
+    font-size: 1.3rem;
+    width: fit-content;
+    position: relative;
+    margin: 20px 0;
+    padding: 2px;
+}
+
+.section .container .col .star::before{
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: var(--orange);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.section .container .col .title{
+    font-family: 'Sora', sans-serif;
+    color: var(--p-color);
+}
+.section .container .col .title h1{
+    color: var(--blackblue);
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin: 10px 0
+}
+
+.section .container .col .title p{
+    font-size: 1.25rem;
+    line-height: 2.3rem;
+    margin: 10px 0 20px 0;
+}
+
+.section .container .col .title ul{
+    list-style: none;
+    padding-left: 35px;
+    line-height: 1.8;
+    font-family: 'Sora', sans-serif;
+    margin-bottom: 40px;
+}
+
+.section .container .col .title ul li{
+    position: relative;
+    font-size: 0.875rem;
+    margin-bottom: 6px;
+}
+.section .container .col .title ul li::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-image: url(resources/Done_ring_round_fill.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
+    left: calc(-1 * (24px + 1em));;
+    top: 0;
+}
+
+.section .container .col:last-child{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.section .container .col .container{
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 1rem;
+    box-shadow: 0px 30px 100px 0px rgba(17, 23, 41, 0.05);
+    width: 342px;
+
+}
+
+.section .container .col .container:first-child {
+    align-self: center;
+    position: relative;
+    right: -12%;
+}
+.section .container .col .container{
+    align-self: center;
+    position: relative;
+    right: 20%;
+}
+.col .container .icon img{
+    margin-inline-end: 15px;
+    
+
+    position: relative;
+}
+
+.icon {
+    padding-bottom: 15px;
+    display: flex;
+}
+
+.icon span {
+    width: 24px;
+    height: 24px;
+    background-image: url(resources/Star_fill.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.min span:last-child {
+    width: 24px;
+    height: 24px;
+    background-image: url(resources/Star_fill_gray.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+b{
+    color: var(--blackblue);
+    font-family: 'Sora', sans-serif;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+b + p{
+    font-family: 'Sora', sans-serif;
+    color: var(--p-color);
+    line-height: 1.7;
+}
+
+/* Start Responsive states */
+
+@media (min-width: 641px) and (max-width: 1024px){
+    .section > .container{
+        padding: 0 40px;
+    }
+    .section .container .col .container:first-child {
+        align-self: center;
+        position: relative;
+        right: -12%;
+    }
+    .section .container .col .container{
+        align-self: center;
+        position: relative;
+        right: 12%;
+    }
+
+}
+@media (max-width: 640px){
+    .section > .container{
+        padding: 0 15px;
+        grid-template-columns: 1fr;
+    }
+    .section .container .col .container:first-child {
+        position: static;
+    }
+    .section .container .col .container{
+        position: static;
+        width: 100%;
+    }
+    
+}
+
+
+/* End Responsive states */
+
